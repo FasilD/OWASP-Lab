@@ -1,6 +1,6 @@
-#Open-ended Questions
+# Open-ended Questions
 
-Scenario 1: Insecure Direct Object Reference (IDOR)
+## Scenario 1: Insecure Direct Object Reference (IDOR)
 	URL: /message/<id>
 
 	What type of access control flaw is this?
@@ -9,7 +9,7 @@ Scenario 1: Insecure Direct Object Reference (IDOR)
 
 	Suggest one mitigation strategy.
 
-Scenario 2: Function-Level Access Control Bypass
+## Scenario 2: Function-Level Access Control Bypass
 	URL: /admin
 
 	What’s missing from the access control check here?
@@ -18,7 +18,7 @@ Scenario 2: Function-Level Access Control Bypass
 
 	How would you fix it?
 
-Scenario 3: Role Tampering
+## Scenario 3: Role Tampering
 	URL: /edit_profile
 
 	How can a user escalate privileges in this form?
