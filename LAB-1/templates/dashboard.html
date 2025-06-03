@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dashboard - QState OWASP Lab</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+        </head>
+
+<body>
+
+<header>
+    <div class="header-container">
+    <img src="{{ url_for('static', filename='logo.png') }}" alt="QState Logo" class="logo"><br><br>
+  
+</div>
+    <div class="green-line"></div>
+      <h1>QState Cyber Security Lab</h1>
+    <p>Welcome {{ user.username }} | Role: {{ user.role }}</p>
+</header>
+
+<div class="container">
+    <h2>OWASP A01: Broken Access Control</h2>
+    <ul>
+        <li>🔓 <strong>IDOR:</strong> <a href="/message/1">View Message #1</a> | <a href="/message/2">View Message #2</a></li>
+        <li>🚪 <strong>Function-Level Access Control:</strong> <a href="/admin">Access Admin Panel</a></li>
+        <li>📂 <strong>Forceful Browsing:</strong> <a href="/hidden-report">View Hidden Report</a></li>
+        <li>🛠️ <strong>Role Tampering:</strong> <a href="/edit_profile">Edit Your Profile</a></li>
+    </ul>
+    <br>
+    <a href="/logout">🚪 Logout</a>
+</div>
+
+<footer>
+    <div class="green-line"></div>
+    <p>© 2025 QState Cyber Security — Defence Beyond Binary</p>
+</footer>
+
+</body>
+</html>

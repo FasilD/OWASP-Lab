@@ -1,0 +1,111 @@
+body {
+            background-color: #0d0d3a;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: white;
+            padding: 50px;
+            margin: 0;
+        }
+        /* Container for image and green line */
+        .top-left-container {
+            position: relative;
+            margin-bottom: 30px; /* space after the image and line */
+        }
+        img.logo {
+            width: 300px;
+            display: block; /* removes bottom whitespace */
+            margin: 0; 
+            float: left;
+        }
+        /* Full-width green line below image */
+        .green-line {
+            clear: both; /* ensures line is below floated image */
+            height: 1px;
+            background-color: green;
+            width: 100vw; /* full viewport width */
+            position: relative;
+            left: 50%;
+            right: 50%;
+            margin-left: -50vw; /* to make it truly edge to edge */
+            margin-bottom: 40px;
+        }
+
+        /* Centered text container */
+        .center-content {
+            text-align: center;
+            clear: both;
+        }
+        h1 {
+            margin-top: 0;
+        }
+         .container {
+            padding: 30px;
+            text-align: center;
+        }
+        h2 {
+            margin-top: 0;
+            color: #00ffcc;
+        }
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+        li {
+            margin: 20px 0;
+        }
+        a {
+            color: #a3ff7c;
+            text-decoration: none;
+            font-size: 1.2em;
+        }
+        a:hover {
+            color: #00ffff;
+        }
+        .subtitle {
+            font-size: 1em;
+            color: #a3ff7c;
+            margin-top: 0;
+        }
+        a {
+            color: #00ffff;
+            text-decoration: none;
+            font-size: 1.2em;
+            display: block;
+            margin-top: 20px;
+        }
+        footer {
+            position: fixed;
+            bottom: 10px;
+            width: 100%;
+            text-align: center;
+            color: #aaa;
+        }
+        footer hr {
+            border: none;
+            height: 1px;
+            background-color: green;
+            margin: 0 0 5px 0;
+        }
+        .container {
+            padding: 30px;
+            text-align: center;
+        }
+        h2 {
+            margin-top: 0;
+            color: #00ffcc;
+        }
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+        li {
+            margin: 20px 0;
+        }
+        a {
+            display: inline;
+            color: #a3ff7c;
+            text-decoration: none;
+            font-size: 1.2em;
+        }
+        a:hover {
+            color: #00ffff;
+        }
