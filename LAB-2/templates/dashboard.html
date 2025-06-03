@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <div class="top-left-container">
+        <img src="{{ url_for('static', filename='logo.png') }}" alt="QState Logo" class="logo">
+        <div class="green-line"></div>
+    </div>
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h2>Welcome, {{ username }}!</h2>
+    <p>This is your dashboard.</p>
+    <form action="{{ url_for('logout') }}" method="get">
+        <input type="submit" value="Logout">
+    </form>
+     <footer>
+        <div class="green-line"></div>
+        Powered by <strong>QState Cyber Security</strong>
+    </footer>
+</body>
+</html>

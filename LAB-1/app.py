@@ -75,32 +75,32 @@ def logout():
 
 # ----------------- OWASP Vulnerable Scenarios ------------------
 
-# ✅ Scenario 1: IDOR (Insecure Direct Object Reference)
+#  Scenario 1: IDOR (Insecure Direct Object Reference)
 @app.route('/message/<int:msg_id>')
 def view_message(msg_id):
     if 'user_id' not in session:
         return redirect('/login')
-    # 🚨 No ownership check — vulnerable to IDOR
+    #  No ownership check — vulnerable to IDOR
     message = Message.query.get(msg_id)
     if not message:
         return "Message not found", 404
     return f"Message #{msg_id}: {message.content}"
 
-# ✅ Scenario 2: Function-Level Access Control Bypass
+#  Scenario 2: Function-Level Access Control Bypass
 @app.route('/admin')
 def admin_panel():
     if 'user_id' not in session:
         return redirect('/login')
-    # 🚨 No role check — any logged-in user can access
+    #  No role check — any logged-in user can access
     return "<h1>Admin Control Panel</h1><p>This should be protected by role, but it's not.</p>"
 
-# ✅ Scenario 3: Forceful Browsing
+#  Scenario 3: Forceful Browsing
 @app.route('/hidden-report')
 def hidden_report():
-    # 🚨 No auth or role check — exposed via direct URL
+    #  No auth or role check — exposed via direct URL
     return "<h2>Confidential report</h2><p>This sensitive data should be protected.</p>"
 
-# ✅ Scenario 4: Role Tampering
+#  Scenario 4: Role Tampering
 @app.route('/edit_profile', methods=['GET', 'POST'])
 def edit_profile():
     if 'user_id' not in session:
@@ -108,7 +108,7 @@ def edit_profile():
     user = User.query.get(session['user_id'])
     if request.method == 'POST':
         user.username = request.form['username']
-        user.role = request.form['role']  # 🚨 User can change their own role
+        user.role = request.form['role']  #  User can change their own role
         db.session.commit()
         return redirect('/dashboard')
     return render_template('edit_profile.html', user=user)
