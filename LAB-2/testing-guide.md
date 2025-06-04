@@ -92,7 +92,7 @@ print("[*] Generated session token:", encrypt_token("admin"))
 1. In your browser or Burp Suite, replace the current cookie:
 
 ```
-session=8YebqTMLHZn0Q7oF7WyvZg==
+session=p0Y5duTneeb0Iy1ekp0Dog==
 ```
 
 1. Refresh `/dashboard`.
@@ -101,3 +101,5 @@ session=8YebqTMLHZn0Q7oF7WyvZg==
   
 ```
 Welcome, admin!
+```
+![[Pasted image 20250603170718.png]]

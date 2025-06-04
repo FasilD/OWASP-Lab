@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Command - OWASP Lab</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <div class="top-left-container">
+    <a href="{{ url_for('login') }}">
+      <img src="{{ url_for('static', filename='logo.png') }}" alt="QState Logo" class="logo"></a>
+      <div class="green-line"></div>
+    </div>
+    <h2>Ping Host</h2>
+    <form method="post">
+    Ping Target IP/Domain | Command injection: <input name="target"><br>
+    <input type="submit" value="Run">
+</form>
+
+{% if output %}
+  <h3>Ping Output:</h3>
+  <pre>{{ output }}</pre>
+{% endif %}
+
+{% if flag %}
+  <p><strong>🏁 Flag:</strong> {{ flag }}</p>
+  {% endif %}
+  </body>
+  <footer>
+    <div class="green-line"></div>
+    Powered by <strong>QState Cyber Security</strong>
+  </footer>     
+  </html>

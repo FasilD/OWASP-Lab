@@ -1,0 +1,38 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Feedback - OWASP Lab</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <div class="top-left-container">
+    <a href="{{ url_for('login') }}">
+      <img src="{{ url_for('static', filename='logo.png') }}" alt="QState Logo" class="logo"></a>
+      <div class="green-line"></div>
+    </div>
+    <h2>Submit Feedback</h2>
+    <form method="post">
+      <textarea name="comment" rows="4" cols="50"></textarea><br>
+      <input type="submit" value="Submit">
+    </form>
+
+    {% if result %}
+    <p>{{ result }}</p>
+    {% endif %}
+
+    {% if table_status %}
+    <p><strong>{{ table_status }}</strong></p>
+    {% endif %}
+
+    {% if flag %}
+    <p><strong>🏁 Flag:</strong> {{ flag }}</p>
+    {% endif %}
+
+  </body>
+  <footer>
+    <div class="green-line"></div>
+    Powered by <strong>QState Cyber Security</strong>
+  </footer>     
+  </html>

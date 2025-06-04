@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>lookup - OWASP Lab</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <div class="top-left-container">
+    <a href="{{ url_for('login') }}">
+      <img src="{{ url_for('static', filename='logo.png') }}" alt="QState Logo" class="logo"></a>
+      <div class="green-line"></div>
+    </div>
+    <h2>XML Lookup</h2>
+    <form method="post">
+      Username: <input name="username"><br>
+      Password: <input name="password" type="password"><br>
+      <input type="submit" value="Check">
+    </form>
+    
+{% if message %}
+  <p><strong>{{ message }}</strong></p>
+{% endif %}
+
+{% if result %}
+  <p>{{ result }}</p>
+{% endif %}
+
+{% if flag %}
+  <p><strong>🏁 Flag:</strong> {{ flag }}</p>
+  {% endif %}
+  </body>
+  <footer>
+    <div class="green-line"></div>
+    Powered by <strong>QState Cyber Security</strong>
+  </footer>     
+  </html>

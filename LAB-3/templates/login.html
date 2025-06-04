@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>login - OWASP Lab</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <div class="top-left-container">
+    <a href="{{ url_for('login') }}">
+    <img src="{{ url_for('static', filename='logo.png') }}" alt="QState Logo" class="logo"></a>
+    <div class="green-line"></div>
+</div>
+<h2>Login</h2>
+<form method="post">
+    Username: <input name="username"><br>
+    Password: <input name="password" type="password"><br>
+    <input type="submit" value="Login">
+</form>
+
+{% if error %}
+<p style="color:red">{{ error }}</p>
+{% endif %}
+
+{% if flag %}
+<p><strong>🏁 Flag:</strong> {{ flag }}</p>
+{% endif %}
+
+
+
+<h3>🧪 Injection Labs Navigation: Before you start make sure you reset the db -- /initdb</h3>
+<ul>
+    <li><a href="/login">Login SQL Injection</a></li>
+    <li><a href="/search">Search SQL Injection</a></li>
+    <li><a href="/feedback">Stored SQL Injection</a></li>
+    <li><a href="/lookup">XPath Injection</a></li>
+    <li><a href="/usersearch">NoSQL Injection</a></li>
+    <li><a href="/ping">Command Injection</a></li>
+</ul>
+</body>
+<footer>
+    <div class="green-line"></div>
+    Powered by <strong>QState Cyber Security</strong>
+</footer>  
+</html>
+

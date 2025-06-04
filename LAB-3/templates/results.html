@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>results - OWASP Lab</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <div class="top-left-container">
+    <a href="{{ url_for('login') }}">
+      <img src="{{ url_for('static', filename='logo.png') }}" alt="QState Logo" class="logo"></a>
+      <div class="green-line"></div>
+    </div>
+    <h2>Employee Search</h2>
+    <form method="post">
+      <input name="keyword" placeholder="Search name">
+      <input type="submit" value="Search">
+    </form>
+    {% for row in results %}
+    <p>{{ row }}</p>
+    {% endfor %}
+
+    {% if flag %}
+    <p><strong>🏁 Flag:</strong> {{ flag }}</p>
+    {% endif %}
+
+  </body>
+  <footer>
+    <div class="green-line"></div>
+    Powered by <strong>QState Cyber Security</strong>
+  </footer>     
+  </html>
