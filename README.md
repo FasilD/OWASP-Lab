@@ -81,6 +81,6 @@ If you find this project helpful:
 🎥 Use it in your cybersecurity training or YouTube demos
 
 📄 License
-This project is licensed under the MIT License.
+This project is licensed under the [MIT License](./LICENSE).
 
 Built with ❤️ by the QState Cyber community, to teach, test, and secure the web.
