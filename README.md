@@ -68,7 +68,6 @@ Access the lab at http://127.0.0.1:5000 or whatever port is specified.
 ### 5. Additional Resources
 
 [OWASP Official Site](https://owasp.org/www-project-top-ten/)
-TryHackMe Labs (Complementary Practice)
 
 ### 6. Contributing
 Got an idea for a new vulnerability or want to add Python/Java/PHP variants?
