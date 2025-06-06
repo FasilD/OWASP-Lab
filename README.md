@@ -19,7 +19,6 @@ This lab series changes that.
 - Learn how to secure your applications **by fixing the code yourself**  
 - Everything runs locally in Docker — easy to spin up and break down
 
----
 
 ## Included Labs
 
@@ -38,7 +37,7 @@ This project contains one complete lab for each OWASP Top 10 risk:
 | A09 | Security Logging & Monitoring Failures   | Lack of alerting and log injection               |
 | A10 | Server-Side Request Forgery (SSRF)       | Internal resource access and metadata theft      |
 
-> 🚧 *More advanced and language-specific variants coming soon!*
+> *More advanced and language-specific variants coming soon!*
 
 ## How to Use
 
@@ -49,7 +48,7 @@ git clone https://github.com/FasilD/OWASP-Lab.git
 cd owasp-top10-labs
 ```
 ### 2. Launch a Lab
-Each lab is Dockerized and self-contained or you can run the app directly using python
+Each lab is Dockerized and self-contained, or you can run the app directly using Python
 ```
 cd LAB-1
 python3 app.py
