@@ -1,7 +1,7 @@
 # OWASP-Lab
 # OWASP Top 10 Hands-On Vulnerability Labs
 
-Welcome to the **OWASP Top 10 Hands-On Labs** — a fully open-source, developer-friendly project that lets you **exploit**, **understand**, and **fix** real-world web vulnerabilities from the ground up.
+Welcome to the **OWASP Top 10 Hands-On Labs**,  a fully open-source, developer-friendly project that lets you **exploit**, **understand**, and **fix** real-world web vulnerabilities from the ground up.
 
 - Learn how each OWASP Top 10 risk is introduced in code  
 - Exploit each vulnerability with real-world attack techniques  
@@ -17,7 +17,7 @@ This lab series changes that.
 - Recreate vulnerabilities with real code  
 - Test multiple variations of each vulnerability (stored, reflected, authenticated, etc.)  
 - Learn how to secure your applications **by fixing the code yourself**  
-- Everything runs locally in Docker — easy to spin up and break down
+- Everything runs locally in Docker, easy to spin up and break down
 
 
 ## Included Labs
@@ -61,10 +61,10 @@ Access the lab at http://127.0.0.1:5000 or whatever port is specified.
 - Then modify the code to fix the issue (step-by-step guidance included)
 
 ### 4. Who Is This For?
-- Developers — Learn how security flaws are created in code
-- Red Teamers — Simulate real-world attack chains
-- Students — Practice hands-on secure coding and exploitation
-- Trainers — Use this for teaching secure web development
+- Developers - Learn how security flaws are created in code
+- Red Teamers - Simulate real-world attack chains
+- Students - Practice hands-on secure coding and exploitation
+- Trainers - Use this for teaching secure web development
 ### 5. Additional Resources
 
 [OWASP Official Site](https://owasp.org/www-project-top-ten/)
@@ -83,4 +83,4 @@ If you find this project helpful:
 📄 License
 This project is licensed under the MIT License.
 
-Built with ❤️ by the QState Cyber community — to teach, test, and secure the web.
+Built with ❤️ by the QState Cyber community, to teach, test, and secure the web.
