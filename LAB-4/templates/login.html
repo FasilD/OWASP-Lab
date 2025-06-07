@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Login</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+  <div class="top-left-container">
+    <a href="{{ url_for('login') }}">
+      <img src="{{ url_for('static', filename='logo.png') }}" alt="QState Logo" class="logo">
+    </a>
+    <div class="green-line"></div>
+  </div>  
+
+  <h2>Login to QuickWallet</h2>
+
+  {% if error %}
+    <p style="color:red;">{{ error }}</p>
+  {% endif %}
+
+  <form method="post" action="/login">
+    <input type="text" name="username" placeholder="Username" required />
+    <input type="password" name="password" placeholder="Password" required />
+    <button type="submit">Login</button>
+  </form>
+
+  <footer>
+    <div class="green-line"></div>
+    Powered by <strong>QState Cyber Security</strong>
+  </footer>
+</body>
+</html>

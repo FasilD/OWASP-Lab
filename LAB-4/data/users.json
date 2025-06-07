@@ -1,0 +1,29 @@
+{
+  "' OR 1=1--": {
+    "balance": 100.0,
+    "is_admin": false
+  },
+  "admin\"": {
+    "balance": -1900.0,
+    "is_admin": false
+  },
+  "fa": {
+    "balance": 2000.0,
+    "is_admin": false
+  },
+  "admin": {
+    "password": "admin123",
+    "balance": -95614.0,
+    "is_admin": false
+  },
+  "fafa": {
+    "password": "default",
+    "balance": 89856.0,
+    "is_admin": false
+  },
+  "545": {
+    "password": "default",
+    "balance": 5858.0,
+    "is_admin": false
+  }
+}

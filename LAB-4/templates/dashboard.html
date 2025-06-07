@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <title>Dashboard</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="top-left-container">
+        <a href="{{ url_for('login') }}">
+        <img src="{{ url_for('static', filename='logo.png') }}" alt="QState Logo" class="logo">
+        <div class="green-line"></div>
+    </div>
+    <h2>Welcome, {{ user }}</h2>
+  <p>Your balance: ${{ balance }}</p>
+  {% if is_admin %}
+    <a href="/admin">Go to Admin Panel</a><br>
+  {% endif %}
+  <a href="/transfer">Make a Transfer</a><br>
+  <a href="/logout">Logout</a>
+     <footer>
+        <div class="green-line"></div>
+        Powered by <strong>QState Cyber Security</strong>
+    </footer>
+</body>
+</html>
