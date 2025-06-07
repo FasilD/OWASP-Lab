@@ -12,13 +12,13 @@ This lab aims to help developers and security learners:
 ##  Vulnerabilities Simulated
 
 | Vulnerability                         | Description |
-|--------------------------------------|-------------|
-| ❌ Insecure Authentication Logic      | No password hashing, plaintext storage |
-| ❌ Auto-account creation on login     | No registration control |
-| ❌ Admin panel with no access control | Anyone can access `/admin` |
-| ❌ Missing input validation           | No balance check, negative transfers possible |
-| ❌ Missing authorization on actions   | No role check for sensitive operations |
-| ❌ Missing CSRF protection            | No CSRF tokens or session binding |
+|-------------------------------------|-------------|
+|  Insecure Authentication Logic      | No password hashing, plaintext storage |
+|  Auto-account creation on login     | No registration control |
+|  Admin panel with no access control | Anyone can access `/admin` |
+|  Missing input validation           | No balance check, negative transfers possible |
+|  Missing authorization on actions   | No role check for sensitive operations |
+|  Missing CSRF protection            | No CSRF tokens or session binding |
 
 ##  Setup Instructions
 
@@ -32,8 +32,8 @@ This lab aims to help developers and security learners:
 #### 1. Clone the repository:
 
 ```
-   git clone https://github.com/yourusername/owasp-a04-insecure-design-lab.git
-   cd owasp-a04-insecure-design-lab
+   https://github.com/FasilD/OWASP-Lab.git
+   cd LAB-4
 ```
 #### 2. Install dependencies:
 
@@ -77,8 +77,8 @@ Feel free to fork, modify, and share.
 ## Powered By
 
 **QState Cyber Security**  
-## Contact
 
+## Contact
 For feedback, suggestions, or issues:  
 📧 info@qstatesec.com  
 🌐 [qstatesec.com](https://qstatesec.com)
