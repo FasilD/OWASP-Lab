@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OWASP A05: Security Misconfiguration Lab</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="top-left-container">
+        <img src="{{ url_for('static', filename='logo.png') }}" alt="QState Logo" class="logo">
+        <div class="green-line"></div>
+    </div>
+    <div class="container">
+        <h1>OWASP A05:2021 – Security Misconfiguration Lab</h1>
+        <p>Welcome to the OWASP A05:2021 Security Misconfiguration Lab. This application has been intentionally configured with several common security flaws related to misconfiguration. Your goal is to identify and exploit these vulnerabilities, find the hidden flags, and then apply the necessary remediations to secure the application.</p>
+
+        <p>This lab is designed to provide hands-on experience for:</p>
+        <ul>
+            <li>Understanding the impact of security misconfigurations.</li>
+            <li>Practicing common penetration testing techniques.</li>
+            <li>Learning how to remediate these vulnerabilities effectively.</li>
+        </ul>
+
+        <div class="vulnerability-note">
+            <h3>Your Mission (as an Ethical Hacker)</h3>
+            <p>Your task is to identify and exploit the following types of misconfigurations within this application. Look for "flags" which indicate a successful exploitation.</p>
+            <ul>
+                <li><strong>Default/Hardcoded Credentials</strong></li>
+                <li><strong>Verbose Error Messages</strong></li>
+                <li><strong>Sensitive File Exposure</strong></li>
+                <li><strong>Unnecessary Features / Default Content Exposure</strong></li>
+                <li><strong>Missing Security Headers</strong></li>
+                <li><strong>Overly Verbose Logging</strong></li>
+            </ul>
+            <p>**If you need guidance or hints to get started, please refer to the `testing-guide.md` file located in the lab's root directory.**</p>
+        </div>
+
+        <div class="menu">
+            <a href="{{ url_for('login') }}">Login Page</a>
+            <a href="{{ url_for('broken_page') }}">Broken Page (for testing errors)</a>
+        </div>
+    </div>
+    <footer>
+        <div class="green-line"></div>
+        Powered by QState Cyber Security
+    </footer>
+</body>
+</html>

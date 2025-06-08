@@ -1,0 +1,23 @@
+# /admins/report.txt
+
+Confidential Admin Report - DO NOT DISTRIBUTE PUBLICLY!
+
+This report contains sensitive internal information that should not be accessible to unauthorized users.
+It is a placeholder for unnecessary default files often left on web servers.
+
+---
+User List (Sample):
+- admin (admin@example.com)
+- user1 (user1@example.com)
+- testuser (test@example.com)
+
+Internal API Endpoints:
+- /api/v1/internal_metrics
+- /api/v1/user_management
+- /api/v2/system_health
+
+Sensitive Log Paths:
+- /var/log/application/errors.log
+- /var/log/auth.log
+
+Flag for Unnecessary Features: FLAG{UNNECESSARY_FEATURE_FOUND}

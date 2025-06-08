@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="top-left-container">
+        <img src="{{ url_for('static', filename='logo.png') }}" alt="QState Logo" class="logo">
+        <div class="green-line"></div>
+    </div>
+    <div class="container">
+        <h1>Admin Panel</h1>
+        <p>Welcome to the administration area!</p>
+
+        {% if flag %}
+            <div class="vulnerability-attempt">
+                <h3>Flag Found (Vulnerability 1: Default/Hardcoded Credentials)</h3>
+                <p>By using default credentials, you've gained access to this panel:</p>
+                <p><strong>{{ flag }}</strong></p>
+                <p>This demonstrates the severe risk of leaving default or easily guessable credentials in place.</p>
+            </div>
+        {% endif %}
+
+        <div class="menu">
+            <a href="{{ url_for('index') }}">Back to Home</a>
+        </div>
+    </div>
+    <footer>
+        <div class="green-line"></div>
+        Powered by QState Cyber Security
+    </footer>
+</body>
+</html>

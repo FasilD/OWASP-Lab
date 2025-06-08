@@ -1,0 +1,240 @@
+/* owasp_a05_lab/app/static/style.css */
+
+/* Base styles for the entire page */
+body {
+    background-color: #0d0d3a; /* Dark blue background from screenshot */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: white; /* Default text color for body */
+    padding: 0; /* Remove default body padding */
+    margin: 0; /* Remove default body margin */
+    min-height: 100vh; /* Ensure body takes full viewport height */
+    display: flex; /* Use flexbox for overall layout */
+    flex-direction: column; /* Stack content vertically */
+    align-items: flex-start; /* Align items to the start (left) by default */
+    /* Adjust padding to control spacing from left edge, mimicking screenshot */
+    padding-left: 50px;
+    padding-top: 50px; /* Top padding for the logo */
+    box-sizing: border-box; /* Include padding in element's total width and height */
+}
+
+/* Container for image and green line at the top-left */
+.top-left-container {
+    display: flex; /* Use flexbox for logo and green line */
+    flex-direction: column; /* Stack logo and green line vertically */
+    align-items: flex-start; /* Align items to the start (left) */
+    width: 100%; /* Take full width of the parent (body) */
+    margin-bottom: 30px; /* Space after the image and line */
+    padding: 0; /* No padding within this container */
+}
+
+img.logo {
+    width: 300px; /* Specific width from your CSS */
+    height: auto; /* Maintain aspect ratio */
+    display: block; /* Removes bottom whitespace */
+    margin: 0; /* No margin around the logo */
+}
+
+/* Full-width green line below image */
+.green-line {
+    height: 1px;
+    background-color: green; /* Specific green color */
+    width: 100vw; /* full viewport width */
+    position: relative;
+    left: -50px; /* Shift left to compensate for body's left padding */
+    margin-bottom: 40px; /* Spacing below the line */
+}
+
+/* Styles for main content areas */
+.container {
+    padding: 0; /* Remove padding as content is directly within body in screenshot area */
+    text-align: left; /* Align text to the left as seen in screenshot */
+    margin: 0; /* Remove auto margins to prevent centering effect */
+    max-width: none; /* No max-width restriction for the container */
+    box-shadow: none; /* No shadow */
+    border: none; /* No border */
+    flex-grow: 1; /* Allow container to grow and take available space */
+    padding-bottom: 20px; /* Add some padding at the bottom of the main content area */
+}
+
+/* Specific styles for headings and text in main content */
+h1 {
+    color: white; /* Title color as seen in screenshot */
+    margin-top: 0;
+    margin-bottom: 20px; /* Space after heading */
+    text-align: left; /* Align to left as in screenshot */
+    font-size: 2.2em; /* Adjust font size to match screenshot */
+}
+
+h2 {
+    margin-top: 0;
+    color: #00ffcc; /* Cyan color from your previous CSS */
+    text-align: left; /* Align to left */
+}
+
+p {
+    color: white; /* General text color for clarity on dark background */
+    line-height: 1.6;
+    text-align: left;
+}
+
+.menu {
+    text-align: left; /* Align menu items to the left */
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.menu a {
+    margin-right: 25px; /* Spacing between menu items */
+    text-decoration: none;
+    color: #00ffff; /* Cyan color for links */
+    font-weight: bold;
+    transition: color 0.3s ease;
+    display: inline-block; /* Allow horizontal arrangement with margin-right */
+}
+
+.menu a:hover {
+    color: #a3ff7c; /* Lighter green on hover */
+    text-decoration: underline;
+}
+
+/* Form specific styles (Login page) */
+.form-group {
+    margin-bottom: 20px;
+    text-align: left; /* Align form elements to left */
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: white; /* Label color */
+}
+
+input[type="text"],
+input[type="password"] {
+    width: 180px; /* Adjust width to match screenshot's compact fields */
+    padding: 8px 10px; /* Padding for input fields */
+    border: 1px solid #555; /* Darker border */
+    border-radius: 3px;
+    font-size: 1em;
+    box-sizing: border-box;
+    background-color: #222; /* Slightly different background for inputs */
+    color: white; /* Input text color */
+    margin-right: 10px; /* Space between inputs */
+}
+
+button {
+    background-color: #28a745; /* Green button */
+    color: white;
+    padding: 8px 15px; /* Smaller padding for button */
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 1em; /* Smaller font size for button */
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #218838;
+}
+
+.message {
+    color: #dc3545; /* Red for error messages */
+    background-color: transparent; /* No background for message */
+    border: none; /* No border for message */
+    padding: 0;
+    margin-bottom: 10px;
+    text-align: left; /* Align message to left */
+}
+
+/* Vulnerability and Security Notes */
+.vulnerability-note, .secure-note {
+    background-color: #1a1a5b; /* Slightly lighter blue for notes */
+    border-left: 5px solid #ff9800; /* Orange for vulnerability */
+    padding: 15px;
+    margin-top: 30px;
+    border-radius: 5px;
+    color: white;
+    text-align: left;
+}
+
+.vulnerability-note h3 {
+    color: #ff9800; /* Orange for vulnerability heading */
+    margin-top: 0;
+}
+
+.vulnerability-note ul, .secure-note ul {
+    list-style-type: disc;
+    padding-left: 25px;
+    margin-top: 10px;
+}
+
+.vulnerability-note li, .secure-note li {
+    margin-bottom: 8px;
+    color: #ccc; /* Lighter text for list items */
+}
+
+.secure-note {
+    border-left-color: #28a745; /* Green for secure note */
+}
+
+.secure-note h3 {
+    color: #28a745; /* Green for secure note heading */
+}
+
+.vulnerability-attempt {
+    background-color: #1a1a5b; /* Use same blue for vulnerability attempts */
+    border-left: 5px solid #ff9800;
+    padding: 15px;
+    margin-top: 10px;
+    border-radius: 5px;
+    color: white;
+    text-align: left;
+}
+.vulnerability-attempt h3 {
+    color: #ff9800;
+    margin-top: 0;
+}
+
+
+/* Footer styles - Corrected Alignment & Line Width */
+footer {
+    position: relative; /* Make it flow with content */
+    width: 100%; /* Ensure it takes the full available width of its parent */
+    padding: 15px 50px 15px 0; /* Add padding to the right, remove left padding here */
+    background-color: transparent;
+    color: #aaa;
+    text-align: center; /* Text is right-aligned */
+    font-size: 0.9em;
+    margin-top: 40px; /* Space above the footer */
+    box-sizing: border-box; /* Ensure padding is included in the element's width */
+}
+
+footer .green-line {
+    /* REMOVED: width: 100vw; and left: -50px; */
+    height: 1px;
+    background-color: green;
+    margin-bottom: 10px; /* Space between line and text */
+    /* This line is now contained within the footer's own padded width */
+   /* width: auto; /Allow line to take full width of its parent (footer's content area) */
+    position: static; /* Remove relative positioning */
+}
+
+/* Adjustments for various anchor tags to ensure consistent styling on dark background */
+a {
+    color: #00ffff; /* Default link color, as seen in screenshot's text */
+    text-decoration: none;
+    font-size: 1.1em; /* Slightly adjusted font size */
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #a3ff7c; /* Hover color */
+    text-decoration: underline;
+}
+
+/* Ensure specific link types don't get distorted */
+.container p a {
+    display: inline; /* Keep links in paragraphs inline */
+}

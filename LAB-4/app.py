@@ -26,7 +26,7 @@ users = load_users()
 def index():
     return redirect('/login')
 
-@app.route('/login', methods=['GET', 'POST'])  # ✅ FIXED
+@app.route('/login', methods=['GET', 'POST'])  #  FIXED
 def login():
     if request.method == 'POST':
         username = request.form['username']

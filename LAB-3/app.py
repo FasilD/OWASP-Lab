@@ -136,10 +136,10 @@ def lookup():
             users = tree.xpath(xpath_query)
             if users:
                 message = f"Welcome {username}!"
-                result = 'User verified ✅'
+                result = 'User verified '
                 flag = "FLAG{xpath_bypass}"
             else:
-                result = 'Invalid credentials ❌'
+                result = 'Invalid credentials '
         except Exception as e:
             message = f"Error: {str(e)}"
     return render_template('lookup.html', message=message, result=result, flag=flag)

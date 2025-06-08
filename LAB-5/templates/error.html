@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Error</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="top-left-container">
+        <img src="{{ url_for('static', filename='logo.png') }}" alt="QState Logo" class="logo">
+        <div class="green-line"></div>
+    </div>
+    <div class="container">
+        <h1>Oops! Something went wrong.</h1>
+        <p>
+            We apologize for the inconvenience. An unexpected error occurred on our server.
+            <br>
+            Please try again later or contact support if the issue persists.
+        </p>
+        {% if error_message %}
+            <p class="message">{{ error_message }}</p>
+        {% endif %}
+        <div class="menu">
+            <a href="{{ url_for('index') }}">Back to Home</a>
+        </div>
+    </div>
+    <footer>
+        <div class="green-line"></div>
+        Powered by QState Cyber Security
+    </footer>
+</body>
+</html>
