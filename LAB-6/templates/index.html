@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block content %}
+    <h1>Welcome to the A06-2021 Vulnerability Lab!</h1>
+    <p>This lab demonstrates vulnerabilities found in outdated versions of popular web frameworks and libraries. Use the navigation below to explore each module.</p>
+
+    <h2>Lab Modules:</h2>
+    <ul>
+        <li><a href="{{ url_for('host_xss_demo') }}">Flask 0.12 - XSS via Host Header</a></li>
+        <li><a href="{{ url_for('jwt_login') }}">PyJWT &lt; 1.5.0 - Token Forgery (None Algorithm)</a></li>
+        <li><a href="{{ url_for('debug_rce_demo') }}">Werkzeug &lt; 0.11.11 - Debugger Remote Code Execution</a></li>
+    </ul>
+
+    <p class="warning"><strong>Remember:</strong> This lab is for educational purposes only and must be run in an isolated virtual environment. Do not use these techniques on systems you do not own or have explicit permission to test.</p>
+{% endblock %}

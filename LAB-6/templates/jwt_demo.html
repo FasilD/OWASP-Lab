@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+{% block content %}
+    <h1>PyJWT &lt; 1.5.0 Token Forgery (None Algorithm)</h1>
+    <p>This lab demonstrates a critical vulnerability in older PyJWT versions (prior to 1.5.0) where an attacker could forge a JSON Web Token (JWT) by setting its algorithm to "none". This effectively bypasses the signature verification process, allowing for arbitrary payload manipulation.</p>
+
+    <form method="POST" action="{{ url_for('jwt_login') }}" class="mb-4">
+        <label for="username">Login as:</label>
+        <input type="text" id="username" name="username" value="guest" required>
+        <button type="submit" name="action" value="login">Login & Get Token</button>
+        <button type="submit" name="action" value="clear_token">Clear Token</button>
+    </form>
+
+    {% if message %}
+        <p class="message"><strong>Server Message:</strong> {{ message }}</p>
+    {% endif %}
+
+    {% if token %}
+        <h3>Your Current JWT:</h3>
+        <pre><code>{{ token }}</code></pre>
+
+        <h3>Decoded Payload (Signature NOT verified by server for demo):</h3>
+        <p>This is what the **vulnerable server-side logic** *thinks* the token's payload is. Notice how `is_admin` is interpreted.</p>
+        <pre><code>{{ user_data }}</code></pre>
+
+        <p class="warning"><strong>Lab Exercise: Forging an Admin Token using "none" algorithm</strong></p>
+        <ol>
+            <li><strong>Get a Base Token:</strong> Click "Login & Get Token" with username "guest". Copy the full JWT string.</li>
+            <li><strong>Use a JWT Debugger:</strong> Go to an online JWT debugger (search for "JWT debugger" or "jwt.io" - *if your VM has temporary internet access for this part, otherwise use a local script if you have one*).
+                <ul>
+                    <li>Paste your copied JWT into the debugger.</li>
+                </ul>
+            </li>
+            <li><strong>Modify the Payload:</strong> In the "Payload" section of the debugger, change <code>"is_admin": false</code> to <code>"is_admin": true</code>.</li>
+            <li><strong>Change the Algorithm:</strong> In the "Header" section, change <code>"alg": "HS256"</code> (or whatever algorithm was used) to <code>"alg": "none"</code>.</li>
+            <li><strong>Remove the Signature:</strong> The debugger will likely show an empty signature, or you'll need to manually delete the third part of the JWT (the signature string after the second dot). A "none" algorithm token will only have two parts (header.payload).</li>
+            <li><strong>Copy the Forged Token:</strong> Copy the new, forged JWT string that uses the "none" algorithm and has your modified payload.</li>
+            <li><strong>Submit the Forged Token:</strong>
+                <ul>
+                    <li>In this lab, the token is stored in your browser's session cookie. To test your forged token, you will need to either:
+                        <ol>
+                            <li>Use your browser's developer tools to **edit the `session` cookie** and replace its value with your forged token. Then, refresh this page.</li>
+                            <li>Alternatively, use a tool like <code>curl</code> to send a request to <code>{{ url_for('jwt_login') }}</code>, including the forged token in the `session` cookie header.</li>
+                        </ol>
+                    </li>
+                </ul>
+            </li>
+            <li><strong>Verify:</strong> After submitting the forged token, the "Decoded Payload" on this page should now show <code>"is_admin": true</code>, demonstrating that the signature verification was bypassed.</li>
+        </ol>
+        <p><strong>Explanation:</strong> Older PyJWT versions or improperly configured JWT validators could be tricked into skipping signature verification if the token explicitly claimed <code>"alg": "none"</code>. This allowed an attacker to change the token's content without needing the secret key, leading to privilege escalation or data manipulation.</p>
+    {% else %}
+        <p>No token currently in session. Please login to generate one and start the exercise.</p>
+    {% endif %}
+{% endblock %}

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A06-2021 Vulnerability Lab</title>
+    </head>
+<body>
+    <div class="top-left-container">
+        <a href="{{ url_for('index') }}">
+            <img src="{{ url_for('static', filename='logo.png') }}" alt="QState Logo" class="logo">
+        </a>
+        <div class="green-line"></div>
+    </div>
+
+    <div class="main-content-area"> {# Renamed from .content #}
+        {% block content %}{% endblock %}
+    </div>
+
+    <footer>
+        <div class="green-line"></div>
+        Powered by <strong>QState Cyber Security</strong>
+    </footer>
+</body>
+</html>

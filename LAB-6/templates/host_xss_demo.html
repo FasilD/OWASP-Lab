@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block content %}
+    <h1>Flask 0.12 Host Header XSS Vulnerability</h1>
+    <p>This page reflects the <code>Host</code> header from your request directly into the page. In older Flask versions (like 0.12), this could lead to Cross-Site Scripting (XSS) if the header is crafted maliciously and not properly sanitized before being rendered in a template.</p>
+    <p><strong>Observed Host Header:</strong></p>
+    <div style="border: 1px solid #ddd; padding: 15px; background-color: #f9f9f9; word-break: break-all; margin-bottom: 20px;">
+        <pre><code>{{ host }}</code></pre>
+    </div>
+    <p class="warning"><strong>Lab Exercise: Perform a Host Header XSS Attack</strong></p>
+    <ol>
+        <li>Open your terminal within the VM.</li>
+        <li>Use <code>curl</code> to send a request to this page, but include a crafted `Host` header with an XSS payload. Replace `127.0.0.1:5000` with the actual IP and port of your Flask app if different:
+            <pre><code>curl -H "Host: &lt;script&gt;alert('XSS from Host Header!')&lt;/script&gt;" http://127.0.0.1:5000/host_xss</code></pre>
+        </li>
+        <li>Observe the terminal output or, if viewing the page in a browser while sending the `curl` request, refresh the page to see the effect. An `alert` box should pop up.</li>
+        <li>**Explanation:** The `Host` header, intended to specify the host and port of the server, was directly inserted into the HTML without being properly escaped by the older Flask/Jinja2 version, allowing the injected script to execute in the browser.</li>
+    </ol>
+{% endblock %}

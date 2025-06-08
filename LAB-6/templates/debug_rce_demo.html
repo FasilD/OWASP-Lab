@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% block content %}
+    <h1>Werkzeug &lt; 0.11.11 Debugger Remote Code Execution (RCE)</h1>
+    <p>This lab demonstrates how an exposed Flask debugger (via <code>debug=True</code> in `app.py` and a vulnerable Werkzeug version) can lead to remote code execution if the debug pin is leaked or guessed. In a real-world scenario, sensitive system information can sometimes be gathered to reconstruct this pin.</p>
+
+    <p>The application is intentionally running in **debug mode** for this demonstration. **This setting should NEVER be enabled in a production environment.**</p>
+
+    <p class="warning"><strong>Lab Exercise: Triggering the Debugger and Gaining RCE</strong></p>
+    <ol>
+        <li>
+            <p><strong>Trigger an Error:</strong> Click the button below to intentionally trigger an error on the server. Because `debug=True` is enabled, this will cause the Werkzeug debugger to appear in your browser window.</p>
+            <a href="{{ url_for('trigger_error') }}" class="btn btn-danger" style="display: inline-block; padding: 10px 20px; background-color: #dc3545; color: white; border-radius: 5px; text-decoration: none;">Trigger Debugger Error</a>
+        </li>
+        <li>
+            <p><strong>Understand the Debug Pin:</strong> Once the debugger appears, you will see an interactive console prompt at the bottom. Before you can use it, you'll need to enter a "pin".</p>
+            <p>The Werkzeug debug pin is derived from several system-specific factors of the machine running the Flask app. In a real exploit, attackers would try to gather these pieces of information. For this lab, you need to conceptually understand what's used:</p>
+            <ul>
+                <li>The **username** of the user running the Flask app on the VM (e.g., you can find this by typing `whoami` in the VM's terminal).</li>
+                <li>The **MAC address** of the primary network interface on the VM (e.g., found using `ip a` or `ifconfig`).</li>
+                <li>The **machine ID** from `/etc/machine-id` on the VM.</li>
+                <li>The Python version.</li>
+                <li>The path to the Flask application's main file.</li>
+            </ul>
+            <p>While calculating the pin can be complex, for the purpose of this lab, the focus is on *what happens once you have the pin*. In a real lab, you might be given the pin or use a simple script to generate it based on pre-set VM info.</p>
+        </li>
+        <li>
+            <p><strong>Enter the Pin:</strong> Once you obtain the correct pin (e.g., from your instructor or by understanding the calculation method for your specific VM setup), enter it into the debugger console prompt.</p>
+        </li>
+        <li>
+            <p><strong>Execute Remote Code:</strong> If the pin is correct, you should now have an interactive Python shell within your browser! You can execute arbitrary Python code. Try a simple command to list the root directory contents of your VM:</p>
+            <pre><code>__import__('os').system('ls -la /')</code></pre>
+            <p>You should see the output of the command directly in the debugger console, demonstrating successful Remote Code Execution (RCE).</p>
+        </li>
+    </ol>
+    <p><strong>Explanation:</strong> Debug mode is incredibly powerful and provides significant access to the underlying system. When combined with a vulnerable Werkzeug version and the ability to obtain the debug pin, an attacker can gain full control over the server, leading to complete system compromise.</p>
+{% endblock %}
