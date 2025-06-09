@@ -45,7 +45,7 @@ This project contains one complete lab for each OWASP Top 10 risk:
 
 ```
 git clone https://github.com/FasilD/OWASP-Lab.git
-cd owasp-top10-labs
+cd OWASP-Lab
 ```
 ### 2. Launch a Lab
 Each lab is Dockerized and self-contained, or you can run the app directly using Python
